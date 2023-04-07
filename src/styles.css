@@ -24,6 +24,7 @@ body {
   --disabled: #c3c8de;
   --background: #fff;
   --font: 'Montserrat', sans-serif;
+
   background-color: #e8e8e8;
   font-family: var(--font);
   display: flex;
@@ -63,7 +64,7 @@ p {
   align-content: space-between;
   background: var(--background);
   border-radius: 0.5rem;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
   max-width: 25rem;
   width: 100%;
@@ -81,10 +82,11 @@ p {
 
 /* Form */
 
-#add-form{
+#add-form {
   position: relative;
   width: 100%;
 }
+
 /*
 #add-form label {
   width: 100%;
@@ -97,13 +99,13 @@ p {
   padding: 0.9rem 1.5rem 0.9rem 0.9rem;
   font-size: var(--font);
   font-style: italic;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-style: solid none solid none;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
-#add-form input[type=text]:focus { 
+#add-form input[type=text]:focus {
   outline: none;
   border: 1px solid #949494;
 }
@@ -132,8 +134,28 @@ p {
   width: 100%;
   padding: 0.9rem 1.5rem 0.9rem 0.9rem;
   position: relative;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-style: none none solid none;
+}
+
+.checkbox:checked {
+  background-color: var(--disabled);
+}
+
+input[type="checkbox"]:checked + label {
+  color: var(--disabled);
+  animation: move 0.4s ease forwards;
+}
+
+@keyframes move {
+  50% {
+    padding-left: 8px;
+    padding-right: 0;
+  }
+
+  100% {
+    padding-right: 4px;
+  }
 }
 
 #checklist label {
@@ -160,7 +182,7 @@ p {
   border: none;
   font-size: 1rem;
   color: gray;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 #clear button:hover {

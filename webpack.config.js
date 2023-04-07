@@ -13,7 +13,7 @@ module.exports = {
       templateParameters: {
         title: 'To Do List',
         header: 'Today\'s To Do',
-      }
+      },
     }),
   ],
   output: {
