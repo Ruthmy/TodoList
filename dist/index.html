@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <link rel="stylesheet" href="/src/styles.css">
+    <title>To Do List</title>
 <script defer src="main.js"></script></head>
 <body>
-    <h1>Hello World!</h1>
+
+    <div id="checklist">
+        <div class="header">
+            <h1>Today's To Do</h1>
+        </div>
+        <div id="items">
+            <form id="add-form" class="add-form" action="" method="">
+				<label for="add-item">
+					<input type="text" name="add-item" id="add-item" class="add-form__input" placeholder="Add a new item to the list..." required>
+                    <button type="button" id="add-button"></button>
+				</label>
+				<div id="error"></div>
+			</form>
+            <ul>
+                <li class="item">
+                    <input checked="" value="1" name="item" type="checkbox" id="01">
+                    <label for="01">Bread</label>
+                    <button class="btn"></button>
+                </li>
+                <li class="item">
+                    <input checked="" value="2" name="item" type="checkbox" id="02">
+                    <label for="02">Coffee</label>
+                    <button class="btn"></button>
+                </li>
+                <li class="item">
+                    <input checked="" value="3" name="item" type="checkbox" id="03">
+                    <label for="03">Milk</label>
+                    <button class="btn"></button>
+                </li>
+                <li class="item">
+                    <input checked="" value="4" name="item" type="checkbox" id="04">
+                    <label for="04">Chocolate</label>
+                    <button class="btn"></button>
+                </li>
+                <li class="item">
+                    <input checked="" value="5" name="item" type="checkbox" id="05">
+                    <label for="05">Flips</label>
+                    <button class="btn"></button>
+                </li>
+            </ul>
+        </div>
+        <div id="clear">
+            <button>Clear all completed</button>
+        </div>
+    </div>
 </body>
 </html>
