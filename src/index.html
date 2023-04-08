@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+
+    <div id="checklist">
+        <div class="header">
+            <h1><%= header%></h1>
+        </div>
+        <div id="items">
+            <form id="add-form" class="add-form" action="" method="">
+				<label for="add-item">
+					<input type="text" name="add-item" id="add-item" class="add-form__input" placeholder="Add a new item to the list..." required>
+                    <button type="button" id="add-button"></button>
+				</label>
+				<div id="error"></div>
+			</form>
+            <ul class="list">
+                
+            </ul>
+        </div>
+        <div id="clear">
+            <button type="button">Clear all completed</button>
+        </div>
+    </div>
+</body>
+</html>

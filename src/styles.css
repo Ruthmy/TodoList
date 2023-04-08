@@ -1,0 +1,191 @@
+/* Global Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html {
+  box-sizing: border-box;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+
+  /* outline: 1px solid red !important; */
+}
+
+body {
+  --text: #414856;
+  --check: #4f29f0;
+  --disabled: #c3c8de;
+  --background: #fff;
+  --font: 'Montserrat', sans-serif;
+
+  background-color: #e8e8e8;
+  font-family: var(--font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 3vh;
+}
+
+/* Text Styles */
+
+h1,
+p,
+button {
+  font-family: var(--font);
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 100;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: -8%;
+}
+
+p {
+  font-size: 1.15rem;
+}
+
+/* Checklist */
+
+#checklist {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  background: var(--background);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+  max-width: 25rem;
+  width: 100%;
+  max-height: none;
+  transition: max-height 0s;
+}
+
+/* Header */
+
+#checklist .header {
+  width: 100%;
+  padding: 1.5rem 1rem 1rem 1rem;
+  align-self: flex-start;
+}
+
+/* Form */
+
+#add-form {
+  position: relative;
+  width: 100%;
+}
+
+/*
+#add-form label {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+*/
+#add-form input[type=text] {
+  width: 100%;
+  padding: 0.9rem 1.5rem 0.9rem 0.9rem;
+  font-size: var(--font);
+  font-style: italic;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-style: solid none solid none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#add-form input[type=text]:focus {
+  outline: none;
+  border: 1px solid #949494;
+}
+
+#add-form button[type=button] {
+  position: absolute;
+  margin-left: -1.5rem;
+  height: 100%;
+  width: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background: no-repeat center/60% url('./images/arrow-enter.svg');
+}
+
+/* Items */
+
+#items ul {
+  width: 100%;
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  width: 100%;
+  padding: 0.9rem 1.5rem 0.9rem 0.9rem;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-style: none none solid none;
+}
+
+.checkbox:checked {
+  background-color: var(--disabled);
+}
+
+input[type="checkbox"]:checked + label {
+  color: var(--disabled);
+  animation: move 0.4s ease forwards;
+}
+
+@keyframes move {
+  50% {
+    padding-left: 8px;
+    padding-right: 0;
+  }
+
+  100% {
+    padding-right: 4px;
+  }
+}
+
+#checklist label {
+  cursor: pointer;
+}
+
+#items .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1.5rem;
+  cursor: pointer;
+  border: none;
+  opacity: 0.6;
+  background: no-repeat center/20% url('./images/vertical-dots-icon.svg');
+}
+
+/* Clear */
+
+#clear button {
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  font-size: 1rem;
+  color: gray;
+  cursor: pointer;
+}
+
+#clear button:hover {
+  color: darkslategray;
+  text-decoration: darkslategray underline;
+}
