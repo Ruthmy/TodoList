@@ -1,5 +1,6 @@
 // Get HTML elements
 const addButton = document.getElementById('add-button');
+const input = document.getElementById('add-item');
 const deleteButton = document.getElementById('clear-button');
 
 // Get the items from the local storage
@@ -47,7 +48,7 @@ function addTask() {
   // Create teh object
   const newItem = { index, description, completed };
   console.log(newItem);
-  // Save the book
+  // Save the task
   ItemsArray.push(newItem);
   // Save on local storage
   localStorage.setItem('tasks', JSON.stringify(ItemsArray));
@@ -56,36 +57,22 @@ function addTask() {
   window.location.reload();
 
   // To update the listed tasks
-  const taskList = document.getElementById('library');
-  
+  const taskList = document.getElementById('library');  
 }
 
-// Add book when form is submitted
+// Add a new task when user hit the add button
 addButton.addEventListener('click', (event) => {
   // Prevents the form from being sent
   event.preventDefault();
-  // Get the title and author value
   addTask()
 });
 
-// Remove a task from the array
-const removeBook = (index) => {
-  // Eliminar el libro del array
-  ItemsArray.splice(index, 1);
-  // Guardar el array actualizado en el localStorage
-  localStorage.setItem('tasks', JSON.stringify(ItemsArray));
-  window.location.reload();
-};
-
-/*
-// Add book when form is submitted
-deleteButton.addEventListener('click', (event) => {
-  // Prevents the form from being sent
-  event.preventDefault();
-  // Get the title and author value
-  removeBook()
+// Add a new task when user hit enter key
+input.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    addTask();
+  }
 });
-*/
 
 // Delete the completed tasks
 function clearCompleted() {
@@ -100,3 +87,21 @@ function clearCompleted() {
 
 const clearButton = document.querySelector('#clear-button');
 clearButton.addEventListener('click', clearCompleted);
+
+// Remove a task from the array
+const removeTask = (index) => {
+  // Eliminar el libro del array
+  ItemsArray.splice(index, 1);
+  // Guardar el array actualizado en el localStorage
+  localStorage.setItem('tasks', JSON.stringify(ItemsArray));
+  window.location.reload();
+};
+
+/*
+// Delete a task from the array
+deleteButton.addEventListener('click', (event) => {
+  // Prevents the form from being sent
+  event.preventDefault();
+  removeTask()
+});
+*/
