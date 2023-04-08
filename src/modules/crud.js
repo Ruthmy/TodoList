@@ -105,13 +105,14 @@ function displayTasks() {
       window.location.reload();
       });
 
-      const checkbox = document.querySelector('input[name="item"]');
-      checkbox.addEventListener('change', (event) => {
-        const index = event.target.dataset.index - 1;
-        toggleCompleted(index);
-      });
-      
     });
+
+    checkbox.addEventListener('change', (event) => {
+      const index = event.target.dataset.index - 1;
+      ItemsArray[index].completed = event.target.checked;
+      localStorage.setItem('tasks', JSON.stringify(ItemsArray));
+    });
+    
 
   });
 }
