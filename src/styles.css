@@ -150,6 +150,7 @@ input[type="checkbox"]:checked + label {
   color: var(--disabled);
   animation: move 0.4s ease forwards;
 }
+
 /*
 @keyframes move {
   50% {
@@ -167,6 +168,7 @@ input[type="checkbox"]:checked + label {
 }
 
 #items .btn {
+  display: block;
   position: absolute;
   right: 0;
   top: 0;
@@ -176,6 +178,18 @@ input[type="checkbox"]:checked + label {
   border: none;
   opacity: 0.6;
   background: no-repeat center/20% url('./images/vertical-dots-icon.svg');
+}
+
+#items .btn-delete {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1.5rem;
+  cursor: pointer;
+  border: none;
+  opacity: 0.6;
 }
 
 .delete {
@@ -190,10 +204,6 @@ input[type="checkbox"]:checked + label {
   vertical-align: middle;
   fill: currentColor;
   background: no-repeat center/50% url('./images/delete.svg');
-}
-
-.red {
-  background-color: red;
 }
 
 input[type=text].edit {
