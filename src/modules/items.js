@@ -1,11 +1,12 @@
 // Get HTML elements
 const addButton = document.getElementById('add-button');
+const deleteButton = document.getElementById('clear-button');
 
 // Get the items from the local storage
-const ItemsArray = JSON.parse(localStorage.getItem("tasks")) || [];
+let ItemsArray = JSON.parse(localStorage.getItem("tasks")) || [];
 
+// Render the items
 let insideItem = '';
-
 ItemsArray.forEach((singleItemContents) => {
   insideItem
   += `
@@ -16,7 +17,6 @@ ItemsArray.forEach((singleItemContents) => {
     </li>
     `;
 });
-
 const section = document.querySelector('.list');
 section.innerHTML = insideItem;
 
@@ -42,7 +42,7 @@ function addTask() {
   const input = document.getElementById('add-item');
   const description = input.value;
   // Set and index base on the actual array
-  const index = ItemsArray.length;
+  const index = ItemsArray.length + 1;
   const completed = false;
   // Create teh object
   const newItem = { index, description, completed };
@@ -66,17 +66,37 @@ addButton.addEventListener('click', (event) => {
   event.preventDefault();
   // Get the title and author value
   addTask()
-  // To display the book
-  //displayBooks();
 });
 
+// Remove a task from the array
+const removeBook = (index) => {
+  // Eliminar el libro del array
+  ItemsArray.splice(index, 1);
+  // Guardar el array actualizado en el localStorage
+  localStorage.setItem('tasks', JSON.stringify(ItemsArray));
+  window.location.reload();
+};
 
+/*
+// Add book when form is submitted
+deleteButton.addEventListener('click', (event) => {
+  // Prevents the form from being sent
+  event.preventDefault();
+  // Get the title and author value
+  removeBook()
+});
+*/
 
+// Delete the completed tasks
+function clearCompleted() {
+  // Filter out completed items
+  const newItemsArray = ItemsArray.filter((item) => !item.completed);
 
+  // Update local storage
+  ItemsArray = newItemsArray;
+  localStorage.setItem('tasks', JSON.stringify(ItemsArray));
+  window.location.reload();
+}
 
-
-
-
-
-
-export default section;
+const clearButton = document.querySelector('#clear-button');
+clearButton.addEventListener('click', clearCompleted);
