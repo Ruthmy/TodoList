@@ -8,7 +8,9 @@ let ItemsArray = JSON.parse(localStorage.getItem("tasks")) || [];
 
 // Render the items
 let insideItem = '';
-ItemsArray.forEach((singleItemContents) => {
+ItemsArray.forEach((singleItemContents, i) => {
+  //Update the index of the item in the array
+  ItemsArray[i].index = i+1;
   insideItem
   += `
     <li class="item">
@@ -20,6 +22,8 @@ ItemsArray.forEach((singleItemContents) => {
 });
 const section = document.querySelector('.list');
 section.innerHTML = insideItem;
+
+console.log(ItemsArray);
 
 // This function is to change the completed status on the array items
 const checkboxes = document.querySelectorAll("input[type='checkbox']");
@@ -90,7 +94,7 @@ clearButton.addEventListener('click', clearCompleted);
 
 // Remove a task from the array
 const removeTask = (index) => {
-  // Eliminar el libro del array
+  // Delete the task from the array
   ItemsArray.splice(index, 1);
   // Guardar el array actualizado en el localStorage
   localStorage.setItem('tasks', JSON.stringify(ItemsArray));
