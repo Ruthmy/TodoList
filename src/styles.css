@@ -150,7 +150,7 @@ input[type="checkbox"]:checked + label {
   color: var(--disabled);
   animation: move 0.4s ease forwards;
 }
-
+/*
 @keyframes move {
   50% {
     padding-left: 8px;
@@ -161,7 +161,7 @@ input[type="checkbox"]:checked + label {
     padding-right: 4px;
   }
 }
-
+*/
 #checklist label {
   cursor: pointer;
 }
@@ -192,6 +192,10 @@ input[type="checkbox"]:checked + label {
   background: no-repeat center/50% url('./images/delete.svg');
 }
 
+.red {
+  background-color: red;
+}
+
 input[type=text].edit {
   width: 90%;
   padding: 0.2rem 1rem 0.2rem 0.2rem;
@@ -202,6 +206,14 @@ input[type=text].edit:focus {
   outline: none;
   border-radius: 0.5rem;
   border: 1px solid #949494;
+}
+
+.task-item .delete-button {
+  display: none;
+}
+
+.task-item:hover .delete-button {
+  display: inline-block;
 }
 
 /* Clear */
