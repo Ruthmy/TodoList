@@ -9,22 +9,22 @@ let ItemsArray = JSON.parse(localStorage.getItem('tasks')) || [];
 
 // Render the items
 
-  let insideItem = '';
-  ItemsArray.forEach((singleItemContents, i) => {
-    // Update the index of the item in the array
-    ItemsArray[i].index = i + 1;
-    insideItem
-    += `
-      <li class="item">
-          <input value="${singleItemContents.index}" name="item" type="checkbox" data-index="${singleItemContents.index}" id="${singleItemContents.index}">
-          <label for="0${singleItemContents.index}">${singleItemContents.description}</label>
-          <button type="button" class="btn delete" aria-label="Delete" id="${singleItemContents.index}" data-index="${singleItemContents.index}"></button>
-      </li>
-      `;
-  });
-  const section = document.querySelector('.list');
-  section.innerHTML = insideItem;
+let insideItem = '';
+ItemsArray.forEach((singleItemContents, i) => {
+  // Update the index of the item in the array
+  ItemsArray[i].index = i + 1;
+  insideItem
+  += `
+    <li class="item">
+        <input value="${singleItemContents.index}" name="item" type="checkbox" data-index="${singleItemContents.index}" id="${singleItemContents.index}">
+        <label for="0${singleItemContents.index}">${singleItemContents.description}</label>
+        <button type="button" class="btn delete" aria-label="Delete" id="${singleItemContents.index}" data-index="${singleItemContents.index}"></button>
+    </li>
+    `;
+});
 
+const section = document.querySelector('.list');
+section.innerHTML = insideItem;
 
 // This function is to change the completed status on the array items
 const checkboxes = document.querySelectorAll("input[type='checkbox']");
@@ -69,14 +69,12 @@ addButton.addEventListener('click', (event) => {
   // Prevents the form from being sent
   event.preventDefault();
   addTask();
-  //displayTaks();
 });
 
 // Add a new task when user hit enter key
 input.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     addTask();
-    //displayTaks();
   }
 });
 
@@ -143,15 +141,6 @@ taskItems.forEach((item) => {
     button.classList.add('btn');
   });
 });
-
-
-window.addEventListener('load', () => {
-  if (localStorage.getItem('tasks')) {
-    ItemsArray = JSON.parse(localStorage.getItem('tasks'));
-  }
-  //displayTaks();
-});
-
 
 
 /*
