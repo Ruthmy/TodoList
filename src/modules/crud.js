@@ -1,4 +1,4 @@
-import { deleteCompletedTasks } from './deleteCompletedTasks';
+import deleteCompletedTasks from './deleteCompletedTasks.js';
 
 // Get HTML elements
 const addButton = document.getElementById('add-button');
