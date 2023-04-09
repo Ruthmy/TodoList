@@ -1,3 +1,5 @@
+import deleteCompletedTasks from './deleteCompletedTasks.js';
+
 // Get HTML elements
 const addButton = document.getElementById('add-button');
 const input = document.getElementById('add-item');
@@ -123,21 +125,10 @@ input.addEventListener('keydown', (event) => {
   }
 });
 
-// Delete the completed tasks
-function deleteCompletedTasks() {
-  ItemsArray = ItemsArray.filter((task) => !task.completed);
-
-  // Update the index property of remaining tasks
-  ItemsArray.forEach((task, index) => {
-    task.index = index + 1;
-  });
-  localStorage.setItem('tasks', JSON.stringify(ItemsArray));
-  displayTasks();
-}
-
 const clearButton = document.querySelector('#clear-button');
 clearButton.addEventListener('click', () => {
-  deleteCompletedTasks();
+  ItemsArray = deleteCompletedTasks(ItemsArray);
+  displayTasks();
 });
 
 displayTasks();
