@@ -97,7 +97,7 @@ p {
 #add-form input[type=text] {
   width: 100%;
   padding: 0.9rem 1.5rem 0.9rem 0.9rem;
-  font-size: var(--font);
+  font-family: var(--font);
   font-style: italic;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-style: solid none solid none;
@@ -138,6 +138,10 @@ p {
   border-style: none none solid none;
 }
 
+.item:hover {
+  background-color: #f7f7f7;
+}
+
 .checkbox:checked {
   background-color: var(--disabled);
 }
@@ -147,6 +151,7 @@ input[type="checkbox"]:checked + label {
   animation: move 0.4s ease forwards;
 }
 
+/*
 @keyframes move {
   50% {
     padding-left: 8px;
@@ -157,12 +162,13 @@ input[type="checkbox"]:checked + label {
     padding-right: 4px;
   }
 }
-
+*/
 #checklist label {
   cursor: pointer;
 }
 
 #items .btn {
+  display: block;
   position: absolute;
   right: 0;
   top: 0;
@@ -172,6 +178,52 @@ input[type="checkbox"]:checked + label {
   border: none;
   opacity: 0.6;
   background: no-repeat center/20% url('./images/vertical-dots-icon.svg');
+}
+
+#items .btn-delete {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1.5rem;
+  cursor: pointer;
+  border: none;
+  opacity: 0.6;
+}
+
+.delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1.5rem;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+  background: no-repeat center/50% url('./images/delete.svg');
+}
+
+input[type=text].edit {
+  width: 90%;
+  padding: 0.2rem 1rem 0.2rem 0.2rem;
+  font-family: var(--font);
+}
+
+input[type=text].edit:focus {
+  outline: none;
+  border-radius: 0.5rem;
+  border: 1px solid #949494;
+}
+
+.task-item .delete-button {
+  display: none;
+}
+
+.task-item:hover .delete-button {
+  display: inline-block;
 }
 
 /* Clear */
