@@ -18,13 +18,15 @@ html {
   /* outline: 1px solid red !important; */
 }
 
-body {
+:root {
   --text: #414856;
   --check: #4f29f0;
   --disabled: #c3c8de;
   --background: #fff;
   --font: 'Montserrat', sans-serif;
+}
 
+body {
   background-color: #e8e8e8;
   font-family: var(--font);
   display: flex;
@@ -151,7 +153,6 @@ input[type="checkbox"]:checked + label {
   animation: move 0.4s ease forwards;
 }
 
-/*
 @keyframes move {
   50% {
     padding-left: 8px;
@@ -162,7 +163,7 @@ input[type="checkbox"]:checked + label {
     padding-right: 4px;
   }
 }
-*/
+
 #checklist label {
   cursor: pointer;
 }
