@@ -89,6 +89,10 @@ p {
   width: 100%;
 }
 
+input[type="checkbox"]:checked + label {
+  color: var(--disabled);
+  animation: move 0.4s ease forwards;
+}
 
 #add-form label {
   width: 100%;
@@ -146,11 +150,6 @@ p {
 
 .checkbox:checked {
   background-color: var(--disabled);
-}
-
-input[type="checkbox"]:checked + label {
-  color: var(--disabled);
-  animation: move 0.4s ease forwards;
 }
 
 @keyframes move {
