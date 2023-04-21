@@ -25,25 +25,25 @@ function displayTasks() {
     checkbox.setAttribute('id', `item-${task.index}`);
     checkbox.setAttribute('data-index', task.index);
     checkbox.checked = task.completed;
-    //li.appendChild(checkbox);
+    // li.appendChild(checkbox);
 
     // Create the <label> element
     const label = document.createElement('label');
     label.setAttribute('for', `item-${task.index}`);
     label.textContent = task.description;
-    //li.appendChild(label);
+    // li.appendChild(label);
 
     // Create the edit button
     const editButton = document.createElement('button');
     editButton.classList.add('btn');
-    //li.appendChild(editButton);
+    // li.appendChild(editButton);
 
     // Create the delete button
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('btn-delete');
-    //li.appendChild(deleteButton);
+    // li.appendChild(deleteButton);
 
-    li.append(checkbox, label, editButton, deleteButton)
+    li.append(checkbox, label, editButton, deleteButton);
 
     // Add the li to the ul
     list.appendChild(li);

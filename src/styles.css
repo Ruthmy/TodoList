@@ -89,13 +89,13 @@ p {
   width: 100%;
 }
 
-/*
+
 #add-form label {
   width: 100%;
   margin: 0;
   padding: 0;
 }
-*/
+
 #add-form input[type=text] {
   width: 100%;
   padding: 0.9rem 1.5rem 0.9rem 0.9rem;
